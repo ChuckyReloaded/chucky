@@ -1,8 +1,6 @@
 <html>
 <body>
 <script>
-// Project - Level 2 JavaScript
-
 // Array for IceCreams
 // parseFloat converts string to number
 // new Array separating name and price

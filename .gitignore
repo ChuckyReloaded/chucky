@@ -1,0 +1,82 @@
+<html>
+<body>
+<script>
+// Project - Level 2 JavaScript
+
+// Array for IceCreams
+// parseFloat converts string to number
+// new Array separating name and price
+var i;
+var icecream = new Array();
+icecream[0] = new Array();
+icecream[0] ['name'] ='Chocbar';
+icecream[0] ['price'] = parseFloat (2.50);
+icecream[1] = new Array();
+icecream[1] ['name'] ='Joybar';
+icecream[1] ['price'] = parseFloat (2.75);
+icecream[2] = new Array();
+icecream[2] ['name'] ='Trumpet';
+icecream[2] ['price'] = parseFloat (3.00);
+icecream[3] = new Array();
+icecream[3] ['name'] ='Magnum';
+icecream[3] ['price'] = parseFloat (4.00);
+
+for (i= 0; i < icecream.length; i++)
+{
+alert (icecream[i]['name'])
+alert ('$' + icecream[i] ['price'])
+}
+
+
+var orderCost = 0;  //Global Variables
+var total = 0;
+var customerName = prompt("Hello, What's your Name?");
+
+function icecreamOrder()   // creates function for order
+{
+
+	total += parseFloat(orderCost); // calculate the Total Price of Order
+	
+	var order = new Array();
+	var number = 0 ;   // local variable
+	
+	for (var loop in icecream) // loop for icecream orders
+	{
+		order[loop] = confirm("Would You like a " +icecream[loop]['name'] + "?");
+		if (order [loop])
+		{
+			order[loop] = icecream[loop]['name'];  // loop
+				total += parseFloat(icecream[loop]['price']);  //adds up the cost of the icecream
+				number++;
+				if (number >=3)
+				{
+				alert("Thank You, you can not order more than 3 Ice Creams, total cost is $" + total);
+				break; }
+				 
+				else{
+					
+					}
+					alert('The total cost is $'  + total);  // Returns total cost
+							 }
+	    else
+			delete order[loop];
+	}
+}
+icecreamOrder();
+function icecreamDelivery()  // New Function for delivery
+{
+var icecreamDelivery = confirm ("Do you want home delivery for $10 drop-off cost?");
+if (icecreamDelivery == true)
+{
+	var deliver = 10;
+	total = total + deliver;  // adds delivery cost
+	alert ('The total cost including delivery is $' + total);
+	
+}
+alert ('Thank you for your order ' +customerName);
+}
+icecreamDelivery();  // calls funtion icecreamDelivery
+icecreamOrder();
+</script>
+</body>
+</html>
